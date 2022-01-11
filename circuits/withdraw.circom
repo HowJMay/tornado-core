@@ -1,5 +1,7 @@
-include "../node_modules/circomlib/circuits/bitify.circom";
-include "../node_modules/circomlib/circuits/pedersen.circom";
+pragma circom 2.0.0;
+
+include "./circomlib/circuits/bitify.circom";
+include "./circomlib/circuits/pedersen.circom";
 include "merkleTree.circom";
 
 // computes Pedersen(nullifier + secret)
@@ -33,10 +35,10 @@ template Withdraw(levels) {
     signal input relayer;  // not taking part in any computations
     signal input fee;      // not taking part in any computations
     signal input refund;   // not taking part in any computations
-    signal private input nullifier;
-    signal private input secret;
-    signal private input pathElements[levels];
-    signal private input pathIndices[levels];
+    signal input nullifier;
+    signal input secret;
+    signal input pathElements[levels];
+    signal input pathIndices[levels];
 
     component hasher = CommitmentHasher();
     hasher.nullifier <== nullifier;

@@ -136,12 +136,13 @@ and @jbaylina for awesome [Circom](https://github.com/iden3/circom) & [Websnark]
 ## Minimal demo example
 
 1. `npm i`
+1. `export NODE_OPTIONS=--openssl-legacy-provider`
 1. `ganache-cli -d`
 1. `npm run download`
 1. `npm run build:contract`
 1. `cp .env.example .env`
 1. `npm run migrate:dev`
-1. `node minimal-demo.js`
+1. `node src/minimal-demo.js`
 
 ## Emulate MPC trusted setup ceremony
 
